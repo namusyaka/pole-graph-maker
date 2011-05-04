@@ -22,13 +22,11 @@ Graph.prototype = {
   initialize : function(datas, title) {
     this.data = datas;
     this.body = this.$c('ul');
-    this.title = title ? this.$c('li') : false;
-    if(this.title) {
+    this.title = this.$c('li');
+    this.title.style.clear = 'both';
+    if(title) {
       this.title.innerHTML = title;
-      this.addPropertyToElement({
-        clear : 'both',
-        borderTop : '1px solid black'
-      }, this.title);
+      this.title.style.borderTop = '1px solid black';
     }
     this.addPropertyToElement({
       border : '1px solid black',
@@ -97,8 +95,7 @@ Graph.prototype = {
       this.body.appendChild(graph_list);
       ++graphs;
     }
-    if(this.title)
-      this.body.appendChild(this.title);
+    this.body.appendChild(this.title);
     return this.body;
   }
 } 

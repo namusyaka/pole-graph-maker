@@ -9,7 +9,7 @@
 
 function Graph(datas, title) {
   return (this instanceof Graph) ?
-this.initialize(datas, title) : new Graph(data, title);
+this.initialize(datas, title) : new Graph(datas, title);
 }
 var _graph_int = 0;
 
@@ -83,7 +83,7 @@ Graph.prototype = {
       }, graph_list);
 
       this.addPropertyToElement({
-        height : this.data[i],
+        height : this.data[i] + 'px',
         border : '1px solid black',
         borderTop : 'none'
       }, pole);

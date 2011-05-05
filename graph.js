@@ -92,7 +92,7 @@ Graph.prototype = {
       title.innerHTML = i, pole.innerHTML = this.data[i];
 
       this.addChildToParent([pole, title], graph_list);
-      this.body.appendChild(graph_list);
+      this.body.appendChild(this.$c('li')).appendChild(graph_list);
       ++graphs;
     }
     this.body.appendChild(this.title);

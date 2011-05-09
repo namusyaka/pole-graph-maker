@@ -50,7 +50,7 @@ Graph.prototype = {
   },
   
   setClassName : function(classname, element) { // Arguments are array.
-    if(!element.length === classname.length)
+    if(element.length !== classname.length)
       return;
     for(var i = 0; i < classname; ++i)
       element[i].className = classname;
